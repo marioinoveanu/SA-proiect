@@ -6,8 +6,6 @@ Acest proiect realizează o analiză comparativă a performanței pentru șapte 
 
 * **SortingMaster.cpp** — Implementarea algoritmilor, a sistemului de benchmark multithreaded și a logicii de monitorizare RAM;
 * **benchmark_results.csv** — Rezultate brute exportate (Algoritm, N, Distribuție, Timp, RAM, Status);
-* **Analiza_Sortare.xlsx** — Prelucrarea datelor sub formă de tabele pivot și grafice comparative;
-* **Raport_Sortare.pdf** — Documentația științifică care interpretează discrepanțele dintre teoria $O(f(n))$ și realitatea hardware.
 
 ### 🧪 Descriere experiment
 
@@ -35,13 +33,3 @@ Testarea a fost realizată pe vectori cu dimensiuni cuprinse între **N=10** și
 * **Eficiență:** Algoritmii $O(n \log n)$ devin obligatorii pentru seturi mari de date, în timp ce algoritmii de tip $O(n^2)$ sunt practic inutilizabili peste pragul de 100.000 de elemente.
 * **Adaptabilitate:** **Insertion Sort** confirmă superioritatea pe listele "Almost Sorted" și pe dimensiuni foarte mici (N < 50), depășind deseori Merge Sort datorită overhead-ului redus.
 * **Limitări practice:** Cycle Sort, deși teoretic optim pentru numărul de scrieri, prezintă un timp de execuție ridicat în acest context experimental.
-
-### 📚 Bibliografie
-
-* **Thomas H. Cormen** - *Introduction to Algorithms* (CLRS);
-* **Donald Knuth** - *The Art of Computer Programming, Vol. 3: Sorting and Searching*;
-* **C++ Reference** - Documentația pentru modelele de memorie și execuție asincronă.
-
-### 📎 Licență
-
-Proiect realizat ca parte a disciplinei **Algoritmi și Structuri de Date** — Semestrul II, 2026.
