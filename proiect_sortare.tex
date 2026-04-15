@@ -1,0 +1,100 @@
+\documentclass[12pt,a4paper]{article}
+
+% --- Pachete Necesare ---
+\usepackage[utf8]{inputenc}
+\usepackage[romanian]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+% --- Configurare Aspect Cod ---
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstset{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    showspaces=false,
+    showstringspaces=false,
+    frame=single
+}
+
+% --- Informații Document ---
+\title{Studiu Experimental asupra Metodelor de Sortare}
+\author{Numele Tău \\ \small Facultatea de Matematică și Informatică}
+\date{Semestrul II, 2024}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introducere}
+Acest proiect prezintă o analiză comparativă a performanței pentru șapte algoritmi de sortare clasici. Scopul experimentului este de a verifica dacă rezultatele obținute în practică coincid cu limitele asimptotice teoretice studiate la cursul de Algoritmi și Structuri de Date.
+
+\section{Algoritmi Implementați}
+În cadrul acestui studiu, am considerat următoarele categorii de algoritmi:
+
+\begin{itemize}
+    \item \textbf{Algoritmi Elementari ($O(n^2)$):} Bubble Sort, Selection Sort, Insertion Sort.
+    \item \textbf{Algoritmi Eficienți ($O(n \log n)$):} Merge Sort, Heap Sort.
+    \item \textbf{Algoritmi Liniari/Specializați:} Radix Sort, Cycle Sort.
+\end{itemize}
+
+\begin{table}[h]
+\centering
+\caption{Complexitatea Teoretică a Algoritmilor}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Algoritm       & Cazul Mediu & Cel mai rău caz & Spațiu Auxiliar \\ \midrule
+Bubble Sort    & $O(n^2)$    & $O(n^2)$        & $O(1)$          \\
+Insertion Sort & $O(n^2)$    & $O(n^2)$        & $O(1)$          \\
+Merge Sort     & $O(n \log n)$ & $O(n \log n)$ & $O(n)$          \\
+Heap Sort      & $O(n \log n)$ & $O(n \log n)$ & $O(1)$          \\
+Radix Sort     & $O(nk)$     & $O(nk)$         & $O(n+k)$        \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\section{Metodologie Experimentală}
+\subsection{Generarea Datelor}
+Pentru testare, am utilizat vectori de dimensiuni cuprinse între $10$ și $10^7$ elemente, cu următoarele distribuții:
+\begin{enumerate}
+    \item \textbf{Random:} Elemente generate uniform aleatoriu.
+    \item \textbf{Sorted:} Elemente deja ordonate crescător.
+    \item \textbf{Reverse Sorted:} Elemente ordonate descrescător.
+    \item \textbf{Almost Sorted:} Vectori în care aproximativ 5\% din elemente sunt amestecate.
+\end{enumerate}
+
+\subsection{Sistemul de Benchmark}
+Implementarea a fost realizată în C++. Am utilizat \texttt{std::chrono} pentru măsurarea timpului și API-uri specifice sistemului de operare pentru monitorizarea consumului de memorie RAM (Working Set).
+
+\section{Rezultate și Analiză}
+\subsection{Performanța Timpului}
+Rezultatele experimentale confirmă faptul că algoritmii $O(n^2)$ devin impracticabili pentru $N > 100.000$. Un comportament interesant a fost observat la \textbf{Insertion Sort}, care a depășit algoritmii $O(n \log n)$ pe seturile de date \textit{Almost Sorted}, datorită overhead-ului redus.
+
+\subsection{Consumul de Memorie}
+\textbf{Merge Sort} a prezentat o creștere liniară a memoriei, în timp ce \textbf{Heap Sort} a rămas constant, confirmând faptul că este un algoritm de tip \textit{in-place}.
+
+\section{Concluzii}
+Analiza experimentală susține teoria asimptotică. Pentru seturi masive de date, algoritmii de tip Divide et Impera (Merge Sort) sau cei liniari (Radix Sort) sunt singurele opțiuni viabile. Localitatea datelor joacă un rol crucial în performanța reală pe sistemele moderne.
+
+\section{Resurse Proiect}
+Codul sursă complet și datele brute obținute în urma benchmark-ului pot fi accesate la următorul link: \\
+\url{https://github.com/utilizator/proiect-sortare}
+
+\end{document}
