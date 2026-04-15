@@ -1,0 +1,8 @@
+Algoritm,Elements,Config,Nanosecunde,Milisecunde,Secunde,RAM(MB),Status
+Bubble Sort,20045,File (numbers.txt),142100,0.1421,0.000142,0.00,OK
+Insertion Sort,20045,File (numbers.txt),549700,0.5497,0.000550,0.01,OK
+Radix Sort,20045,File (numbers.txt),2850200,2.8502,0.002850,0.01,OK
+Heap Sort,20045,File (numbers.txt),8698500,8.6985,0.008698,0.01,OK
+Merge Sort,20045,File (numbers.txt),9963400,9.9634,0.009963,0.01,OK
+Cycle Sort,20045,File (numbers.txt),789585600,789.5856,0.789586,0.01,OK
+Selection Sort,20045,File (numbers.txt),1452542500,1452.5425,1.452543,0.01,OK
