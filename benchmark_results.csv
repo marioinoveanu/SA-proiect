@@ -1,0 +1,8 @@
+Algoritm,Elements,Config,Nanosecunde,Milisecunde,Secunde,RAM(MB),Status
+Radix Sort,50000,Almost Sorted,6994600,6.9946,0.006995,0.00,OK
+Heap Sort,50000,Almost Sorted,20675000,20.6750,0.020675,0.01,OK
+Merge Sort,50000,Almost Sorted,30256700,30.2567,0.030257,0.01,OK
+Insertion Sort,50000,Almost Sorted,832195400,832.1954,0.832195,0.01,OK
+Cycle Sort,50000,Almost Sorted,5209990100,5209.9901,5.209990,0.01,OK
+Selection Sort,50000,Almost Sorted,8978568400,8978.5684,8.978568,0.01,OK
+Bubble Sort,50000,Almost Sorted,10103017400,10103.0174,10.103017,0.01,OK
